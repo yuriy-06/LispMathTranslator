@@ -1,1 +1,1 @@
-(defpackage :LispMathTranslator  (:use :common-lisp)  (:export :LispMathTranslator)) 
+(defpackage :LispMathTranslator  (:use :common-lisp)  (:export :LispMathTranslator :lpt :tests)) 

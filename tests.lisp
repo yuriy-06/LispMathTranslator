@@ -1,0 +1,20 @@
+(defun tests ()
+    (let ((cnt 0) all)
+        (defun smpt (expr expect)
+            (let (result)
+                (setq result (lpt expr))
+                (if (equal result expect) (incf cnt) (format t "failed ~%   (lpt ~a):~%   expected ~a ~%   but received ~a~%~%" expr expect result))))
+        (setq all (list-length (list 
+         ;; tests started
+            (smpt '(+ 1 1) "(1 + 1)")
+            (smpt '(/ 2 1) "{2 over {1}}")
+            (smpt '(/ 2 1 3) "{2 over {1 times 3}}")
+            (smpt '(+ 2 3 (* 5 8)) "(2 + (3 + 5 times 8))")
+            (smpt '(<= 1 1) "1 leslant 1")
+            (smpt '(expt 5 3) "{5}^{3}")
+            (smpt '(sqrt 2) "SQRT{2}")
+            (smpt '(setq mu (+ 1 (* (/ 1 h) (+ (* m1 l1  ) (* m2 l2) ) ))) "MU = (1 + {1 over {H}} times (M1 times L1 + M2 times L2))")
+        )))
+        (format t "passed ~a tests in all ~a" cnt all)
+        ))
+        

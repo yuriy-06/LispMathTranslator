@@ -9,6 +9,7 @@
   :description "Some function for engineering work"
 :depends-on ()
   :components ((:file "package")
-               (:file "LispMathTranslator"))
+               (:file "LispMathTranslator")
+               (:file "tests"))
   :serial t)
   
